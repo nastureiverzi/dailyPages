@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 
 const app = express();
@@ -15,4 +17,4 @@ app.get('/boom', (req, res, next) => {
     }
 });
 
-app.listen(3000, () => logger.info('Express.js listening on port 3000.'));
+app.listen(process.env.HTTP_PORT, () => logger.info(`Express.js listening on port ${process.env.HTTP_PORT}.`));
