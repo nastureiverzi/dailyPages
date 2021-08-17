@@ -3,9 +3,12 @@ require('dotenv').config();
 const express = require('express');
 
 const app = express();
+
+const mongoose = require('mongoose');
 const logger = require('./logger');
 const httpLogger = require('./httpLogger');
 
+mongoose.connect(process.env.DB_URI);
 app.use(httpLogger);
 
 app.get('/boom', (req, res, next) => {
