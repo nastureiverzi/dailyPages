@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 const logger = require('./logger');
 const httpLogger = require('./httpLogger');
 
-mongoose.connect(process.env.DB_URI);
+mongoose.connect(process.env.DB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 app.use(httpLogger);
 
 app.get('/boom', (req, res, next) => {
