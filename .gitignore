@@ -3,4 +3,3 @@ build
 logs
 package-lock.json
 .env
-config

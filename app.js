@@ -1,18 +1,21 @@
-require('dotenv').config();
-
 const express = require('express');
 
 const app = express();
 
 const mongoose = require('mongoose');
+const config = require('./config/config');
 const logger = require('./logger');
 const httpLogger = require('./httpLogger');
 const userRoutes = require('./routes/user');
 
-mongoose.connect(process.env.DB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+const connString = `mongodb://${config.db.user}:${config.db.pass}@${config.db.host}:${config.db.port}/${config.db.name}`;
+
+mongoose.connect(connString, { useNewUrlParser: true, useUnifiedTopology: true }).catch((err) => {
+    console.log(err);
+});
+
+//
 app.use(httpLogger);
-app.use(express.json());
-const port = process.env.PORT || 5000;
 
 // app.get('/boom', (req, res, next) => {
 //     try {
@@ -25,4 +28,4 @@ const port = process.env.PORT || 5000;
 
 app.use('/user', userRoutes);
 
-app.listen(port, () => logger.info(`Express.js listening on port ${port}.`));
+app.listen(() => logger.info(`Express.js listening on port ${config.app.port}.`));
