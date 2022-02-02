@@ -1,33 +1,33 @@
 {
-  "name": "dailypages",
-  "version": "1.0.0",
-  "description": "Stream of consciousness writing and analyzing app",
-  "main": "app.js",
-  "directories": {
-    "test": "tests"
-  },
-  "scripts": {
-    "start": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "nastureiVerzi",
-  "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.19.1",
-    "cors": "^2.8.5",
-    "dotenv": "^10.0.0",
-    "express": "^4.17.1",
-    "helmet": "^5.0.2",
-    "mongoose": "^6.1.8",
-    "morgan": "^1.10.0",
-    "morgan-json": "^1.1.0",
-    "nodemon": "^2.0.15",
-    "winston": "^3.3.3"
-  },
-  "devDependencies": {
-    "eslint": "^7.31.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.23.4",
-    "eslint-plugin-security": "^1.4.0"
-  }
+	"name": "dailypages",
+	"version": "1.0.0",
+	"description": "Stream of consciousness writing and analyzing app",
+	"main": "app.js",
+	"directories": {
+		"test": "tests"
+	},
+	"scripts": {
+		"start": "nodemon app.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "nastureiVerzi",
+	"license": "ISC",
+	"dependencies": {
+		"body-parser": "^1.19.1",
+		"cors": "^2.8.5",
+		"dotenv": "^10.0.0",
+		"express": "^4.17.1",
+		"helmet": "^5.0.2",
+		"mongoose": "^6.1.8",
+		"morgan": "^1.10.0",
+		"morgan-json": "^1.1.0",
+		"winston": "^3.3.3"
+	},
+	"devDependencies": {
+		"eslint": "^7.31.0",
+		"eslint-config-airbnb-base": "^14.2.1",
+		"eslint-config-prettier": "^8.3.0",
+		"eslint-plugin-import": "^2.23.4",
+		"eslint-plugin-security": "^1.4.0"
+	}
 }
