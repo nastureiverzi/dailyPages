@@ -5,6 +5,7 @@ const env = process.env.NODE_ENV;
 const dev = {
 	app: {
 		port: parseInt(process.env.DEV_APP_PORT, 10) || 3000,
+		origin: process.env.DEV_CORS_ORIGIN,
 	},
 	db: {
 		host: process.env.DEV_DB_HOST || 'localhost',
