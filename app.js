@@ -6,7 +6,7 @@ const app = express();
 const config = require('./config/config');
 const logger = require('./logger');
 const httpLogger = require('./httpLogger');
-const userRoutes = require('./routes/user');
+const userRoutes = require('./routes/users');
 const DBConnect = require('./config/database');
 
 app.use(
