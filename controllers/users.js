@@ -14,7 +14,7 @@ const createUser = async (req, res, next) => {
 
 		const savedUser = await user.save();
 
-		res.sendStatus(200).json({ message: 'Created new user', savedUser });
+		res.status(200).json({ message: 'Created new user', savedUser });
 	} catch (err) {
 		logger.error(`Error saving user: ${err.stack}`);
 		next(err);
@@ -39,18 +39,18 @@ const getUser = async (req, res, next) => {
 const updateUser = async (req, res, next) => {
 	try {
 		if (!req.body) {
-			res
-				.sendStatus(400)
-				.json({ message: 'No data provided for update. Abort.' });
+			res.status(400).json({ message: 'No data provided for update. Abort.' });
+			return;
 		}
 
 		const data = await User.findByIdAndUpdate(req.params.id, req.body);
 
 		if (!data) {
-			res.sendStatus(404).json({ message: 'User was not found.' });
+			res.status(404).json({ message: 'User was not found.' });
+			return;
 		}
 
-		res.sendStatus(200).json({ message: 'User updated succesfully.' });
+		res.status(200).json({ message: 'User updated succesfully.' });
 	} catch (err) {
 		logger.error(`Error updating user: ${err.stack}`);
 		next(err);
@@ -62,10 +62,11 @@ const deleteUser = async (req, res, next) => {
 		const data = await User.findByIdAndDelete(req.params.id);
 
 		if (!data) {
-			res.sendStatus(404).json({ message: 'User was not found.' });
+			res.status(404).json({ message: 'User was not found.' });
+			return;
 		}
 
-		res.sendStatus(200).json({ message: 'User deleted successfully.' });
+		res.status(200).json({ message: 'User deleted successfully.' });
 	} catch (err) {
 		logger.error(`Error deleting user: ${err.stack}`);
 		next(err);
