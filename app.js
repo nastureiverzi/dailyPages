@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
 	res.json({ message: 'Da...tu inca existi?' });
 });
 
-app.use('/user', userRoutes);
+app.use('/users', userRoutes);
 
 DBConnect();
 
