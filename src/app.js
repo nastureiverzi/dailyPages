@@ -3,11 +3,11 @@ const cors = require('cors');
 
 const app = express();
 
-const config = require('./config/config');
-const logger = require('./logger');
-const httpLogger = require('./httpLogger');
+const config = require('../config/config');
+const logger = require('../logger');
+const httpLogger = require('../httpLogger');
 const userRoutes = require('./users/routes/userRoutes');
-const DBConnect = require('./config/database');
+const DBConnect = require('../config/database');
 
 app.use(
 	cors({
