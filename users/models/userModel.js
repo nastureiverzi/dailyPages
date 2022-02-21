@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const dailyPages = require('./dailyPage');
+const dailyPages = require('../../dailies/models/dailyPageModel');
 
 const { Schema } = mongoose;
 

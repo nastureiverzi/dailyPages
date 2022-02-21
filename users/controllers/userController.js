@@ -1,6 +1,6 @@
-const logger = require('../logger');
+const logger = require('../../logger');
 
-const User = require('../models/user');
+const User = require('../models/userModel');
 
 // TODO jwt authentication middleware
 const createUser = async (req, res, next) => {

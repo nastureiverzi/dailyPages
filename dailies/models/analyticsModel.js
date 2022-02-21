@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const analyticsSchema = new mongoose.Schema({
-    // tbd
+	// tbd
 });
 
 module.exports = mongoose.model('Analytics', analyticsSchema);

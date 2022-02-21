@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const analytics = require('./analytics');
+const analytics = require('./analyticsModel');
 
 const dailyPagesSchema = new mongoose.Schema({
 	title: { type: String },
