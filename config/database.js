@@ -1,10 +1,9 @@
 import mongoose from 'mongoose';
+import config from './config';
+import logger from '../logger';
 
-const config = require('./config');
-const logger = require('../logger');
-
-export default class DBConnect {
-	static async setup() {
+export default class Database {
+	static async connect() {
 		const connString = `mongodb://${config.db.user}:${config.db.pass}@${config.db.host}:${config.db.port}/${config.db.name}?authSource=${config.db.authSource}`;
 		try {
 			await mongoose.connect(connString);

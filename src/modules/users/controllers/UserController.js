@@ -1,12 +1,21 @@
+/* eslint-disable class-methods-use-this */
 /* eslint-disable no-tabs */
-const logger = require('../../../../logger');
+// const logger = require('../../../../logger');
 
 export default class UserController {
 	constructor(userService) {
 		this.userService = userService;
 	}
 
-	// createUser() {}
+	createUser() {}
+
+	getUser() {}
+
+	updateUser() {}
+
+	deleteUser() {}
+
+	loginUser() {}
 }
 // TODO jwt authentication middleware
 // const createUser = async (req, res, next) => {
