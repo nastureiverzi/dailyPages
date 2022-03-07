@@ -1,6 +1,6 @@
-import db from './config/database';
-import logger from './logger';
-import Bootstrap from './src/bootstrap';
+import db from './config/database.js';
+import logger from './logger.js';
+import Bootstrap from './src/bootstrap.js';
 
 // start server
 const bootstrap = new Bootstrap();

@@ -1,9 +1,9 @@
 import { asClass, asValue, InjectionMode, createContainer } from 'awilix';
-import App from './app';
-import UserController from './modules/users/controllers/userController';
-import UserService from './modules/users/services/userService';
-import UserRepository from './modules/users/repositories/userRepository';
-import config from '../config/config';
+import App from './app.js';
+import UserController from './modules/users/controllers/userController.js';
+import UserService from './modules/users/services/userService.js';
+import UserRepository from './modules/users/repositories/userRepository.js';
+import config from '../config/config.js';
 
 export default class Bootstrap {
 	constructor() {

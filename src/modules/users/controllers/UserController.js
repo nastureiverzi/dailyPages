@@ -2,19 +2,27 @@
 /* eslint-disable no-tabs */
 // const logger = require('../../../../logger');
 
+import { DELETE, GET, POST, PUT, route } from 'awilix-express';
+
 export default class UserController {
 	constructor(userService) {
 		this.userService = userService;
 	}
 
+	// @POST()
 	createUser() {}
 
+	// @GET()
 	getUser() {}
 
+	// @PUT()
 	updateUser() {}
 
+	// @DELETE()
 	deleteUser() {}
 
+	@route('/users/login')
+	@POST()
 	loginUser() {}
 }
 // TODO jwt authentication middleware
