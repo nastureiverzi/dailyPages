@@ -1,30 +1,27 @@
+/* eslint-disable no-unused-labels */
+/* eslint-disable no-unused-expressions */
+/* eslint-disable no-labels */
+/* eslint-disable no-restricted-syntax */
 /* eslint-disable class-methods-use-this */
 /* eslint-disable no-tabs */
 // const logger = require('../../../../logger');
 
-import { DELETE, GET, POST, PUT, route } from 'awilix-express';
+import awilix from 'awilix-express';
 
-export default class UserController {
-	constructor(userService) {
-		this.userService = userService;
-	}
+const userAPI = () => {
+	createUser: () => {};
+	getUser: async (req, res) => {
+		console.log('whatever');
+	};
+	updateUser: () => {};
+	deleteUser: () => {};
+	loginUser: () => {};
+};
 
-	// @POST()
-	createUser() {}
-
-	// @GET()
-	getUser() {}
-
-	// @PUT()
-	updateUser() {}
-
-	// @DELETE()
-	deleteUser() {}
-
-	@route('/users/login')
-	@POST()
-	loginUser() {}
-}
+export default awilix
+	.createController(userAPI)
+	.prefix('/users')
+	.get('/:id', 'getUser');
 // TODO jwt authentication middleware
 // const createUser = async (req, res, next) => {
 // 	try {

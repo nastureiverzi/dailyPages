@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
-const dailyPages = require('../../dailies/models/dailyPageModel');
+import dailyPages from '../../dailies/models/dailyPageModel.js';
 
 const { Schema } = mongoose;
 
@@ -11,4 +11,4 @@ const userSchema = new Schema({
 	dailyPages: [{ type: Schema.Types.ObjectId, dailyPages }],
 });
 
-module.exports = mongoose.model('User', userSchema);
+export default mongoose.model('User', userSchema);

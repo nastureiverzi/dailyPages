@@ -1,5 +1,4 @@
-const mongoose = require('mongoose');
-const analytics = require('./analyticsModel');
+import mongoose from 'mongoose';
 
 const dailyPagesSchema = new mongoose.Schema({
 	title: { type: String },
@@ -8,4 +7,4 @@ const dailyPagesSchema = new mongoose.Schema({
 	// analytics: [analytics],
 });
 
-module.exports = mongoose.model('DailyPage', dailyPagesSchema);
+export default mongoose.model('DailyPage', dailyPagesSchema);

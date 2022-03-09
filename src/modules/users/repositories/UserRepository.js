@@ -1,5 +1,5 @@
-const logger = require('../../../../logger');
-const UserModel = require('../models/userModel');
+import logger from '../../../../logger.js';
+import UserModel from '../models/userModel.js';
 
 export default class UserRepository {
 	constructor() {

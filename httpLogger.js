@@ -1,6 +1,6 @@
 import morgan from 'morgan';
 import json from 'morgan-json';
-import logger from './logger';
+import logger from './logger.js';
 
 const format = json({
 	method: ':method',

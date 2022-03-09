@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
-import userRoutes from './modules/users/routes/userRoutes';
-import httpLogger from '../httpLogger';
+
+import httpLogger from '../httpLogger.js';
 
 export default class App {
 	constructor(config) {
@@ -31,7 +31,7 @@ export default class App {
 			res.json({ message: 'Da...tu inca existi?' });
 		});
 
-		app.use('/users', userRoutes);
+		// app.use('/users', userRoutes);
 
 		return app;
 	}
