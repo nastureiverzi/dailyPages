@@ -1,10 +1,13 @@
 import express from 'express';
 import cors from 'cors';
+import awilix from 'awilix-express';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 
-import httpLogger from '../httpLogger.js';
+import httpLogger from '../../httpLogger.js';
 
 export default class App {
-	constructor(config) {
+	constructor({ config }) {
 		this.appConfig = config;
 	}
 
@@ -17,6 +20,8 @@ export default class App {
 
 	setup() {
 		const app = express();
+		const filename = fileURLToPath(import.meta.url);
+		const currDir = dirname(filename);
 
 		app.use(
 			cors({
@@ -30,8 +35,6 @@ export default class App {
 		app.get('/', (req, res) => {
 			res.json({ message: 'Da...tu inca existi?' });
 		});
-
-		// app.use('/users', userRoutes);
 
 		return app;
 	}

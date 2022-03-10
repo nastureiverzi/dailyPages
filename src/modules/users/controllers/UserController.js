@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-labels */
+
 /* eslint-disable no-unused-expressions */
 /* eslint-disable no-labels */
 /* eslint-disable no-restricted-syntax */
@@ -6,22 +7,32 @@
 /* eslint-disable no-tabs */
 // const logger = require('../../../../logger');
 
-import awilix from 'awilix-express';
+import awilix, { route } from 'awilix-express';
 
-const userAPI = () => {
-	createUser: () => {};
-	getUser: async (req, res) => {
-		console.log('whatever');
-	};
-	updateUser: () => {};
-	deleteUser: () => {};
-	loginUser: () => {};
-};
+@route('/users')
+export default class UserWhateves(){}
 
-export default awilix
-	.createController(userAPI)
-	.prefix('/users')
-	.get('/:id', 'getUser');
+const userAPI = ({ userService }) => ({
+	createUser: async (req, res, next) => {
+		try {
+			await userService.createUser(req.body);
+		} catch (err) {
+			next(err);
+		}
+	},
+	// getUser: async (req, res) => {
+	// 	console.log('whatever');
+	// };
+	// updateUser: () => {};
+	// deleteUser: () => {};
+	// loginUser: () => {};
+});
+
+// export default awilix
+// 	.createController(userAPI)
+// 	.prefix('/users')
+// 	.get('/:id', 'getUser')
+// 	.post('/', 'createUser');
 // TODO jwt authentication middleware
 // const createUser = async (req, res, next) => {
 // 	try {
