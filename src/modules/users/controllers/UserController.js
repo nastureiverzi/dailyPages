@@ -1,53 +1,19 @@
-/* eslint-disable no-unused-labels */
-
-/* eslint-disable no-unused-expressions */
-/* eslint-disable no-labels */
-/* eslint-disable no-restricted-syntax */
-/* eslint-disable class-methods-use-this */
 /* eslint-disable no-tabs */
-// const logger = require('../../../../logger');
+const logger = require('winston');
+const userService = require('../services/userService');
 
-import awilix, { route } from 'awilix-express';
-
-@route('/users')
-export default class UserWhateves(){}
-
-const userAPI = ({ userService }) => ({
-	createUser: async (req, res, next) => {
-		try {
-			await userService.createUser(req.body);
-		} catch (err) {
-			next(err);
-		}
-	},
-	// getUser: async (req, res) => {
-	// 	console.log('whatever');
-	// };
-	// updateUser: () => {};
-	// deleteUser: () => {};
-	// loginUser: () => {};
-});
-
-// export default awilix
-// 	.createController(userAPI)
-// 	.prefix('/users')
-// 	.get('/:id', 'getUser')
-// 	.post('/', 'createUser');
 // TODO jwt authentication middleware
-// const createUser = async (req, res, next) => {
-// 	try {
-// const user = new User();
-// user.name = req.body.name;
-// user.email = req.body.email;
-// // TODO: salt password
-// user.password = req.body.password;
-// const savedUser = await user.save();
-// res.status(200).json({ message: 'Created new user', savedUser });
-// } catch (err) {
-// 	logger.error(`Error saving user: ${err.stack}`);
-// 	next(err);
-// 	}
-// };
+const createUser = async (req, res, next) => {
+	try {
+		const user = req.body;
+		// TODO: salt password
+		const savedUser = await userService.createUser(user);
+		res.status(200).json({ message: 'Created new user', savedUser });
+	} catch (err) {
+		logger.error(`Error saving user: ${err.stack}`);
+		next(err);
+	}
+};
 
 // const getUser = async (req, res, next) => {
 // 	try {
@@ -102,4 +68,8 @@ const userAPI = ({ userService }) => ({
 // };
 
 // TODO login, also with 3rd party APIs
-// const loginUser = (req, res, next) => {};
+const loginUser = (req, res, next) => {};
+
+module.exports = {
+	createUser,
+};

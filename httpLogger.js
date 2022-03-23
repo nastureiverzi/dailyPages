@@ -1,6 +1,7 @@
-import morgan from 'morgan';
-import json from 'morgan-json';
-import logger from './logger.js';
+const morgan = require('morgan');
+const json = require('morgan-json');
+
+const logger = require('./logger');
 
 const format = json({
 	method: ':method',
@@ -28,4 +29,4 @@ const httpLogger = morgan(format, {
 	},
 });
 
-export default httpLogger;
+module.exports = httpLogger;

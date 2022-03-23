@@ -1,14 +1,16 @@
-import express from 'express';
-import userCtrl from '../controllers/userController.js';
+/* eslint-disable no-tabs */
+const express = require('express');
+
+const userCtrl = require('../controllers/userController');
 
 const router = express.Router();
 
 router.route('/').post(userCtrl.createUser);
-router.route('/login').post(userCtrl.loginUser);
-router
-	.route('/:id')
-	.get(userCtrl.getUser)
-	.put(userCtrl.updateUser)
-	.delete(userCtrl.deleteUser);
+// router.route('/login').post(userCtrl.loginUser);
+// router
+// 	.route('/:id')
+// 	.get(userCtrl.getUser)
+// 	.put(userCtrl.updateUser)
+// 	.delete(userCtrl.deleteUser);
 
-export default router;
+module.exports = router;

@@ -12,12 +12,6 @@
 	"rules": {
 		"no-tabs": ["error", { "allowIndentationTabs": true }],
 		"linebreak-style": ["error", "windows"],
-		"no-unused-vars": "warn",
-		"import/extensions": [
-			"error",
-			{
-				"js": "ignorePackages"
-			}
-		]
+		"no-unused-vars": "warn"
 	}
 }
